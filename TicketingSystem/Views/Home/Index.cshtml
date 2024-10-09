@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <a id="addTicket"class="btn btn-primary mt-2">Yes</a>
+</div>
+
+<ul id="ticketList">
+</ul>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(`#addTicket`).click(function () {
+            const component = `<li>Hello</li>`;
+            $(`#ticketList`).append(component);
+        });
+    });
+</script>
