@@ -16,6 +16,7 @@
     $(document).ready(function () {
         let counter = 0;
         $(`#addTicket`).click(function () {
+            //create a new component upon clicking addTicket
             const component = 
             `<li>
                 <div>
@@ -27,10 +28,11 @@
         });
 
         $('#ticketList').on('click', '.deleteButton', function () {
-            /*
-            *
+           /*
+            * Upon clicking a child component of ticketList it grabs that component
+            * via (this) and then grabs the closest li, its parent, and .remove() it
             */
-            $(this).closest('li').remove(); // Remove the parent <li> of the clicked button
+            $(this).closest('li').remove();
         });
 
     });
