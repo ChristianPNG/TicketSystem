@@ -14,9 +14,24 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
+        let counter = 0;
         $(`#addTicket`).click(function () {
-            const component = `<li>Hello</li>`;
+            const component = 
+            `<li>
+                <div>
+                      ${counter} <button class="deleteButton btn-primary">What</button>
+                </div>
+            </li>`;
             $(`#ticketList`).append(component);
+            counter += 1;
         });
+
+        $('#ticketList').on('click', '.deleteButton', function () {
+            /*
+            *
+            */
+            $(this).closest('li').remove(); // Remove the parent <li> of the clicked button
+        });
+
     });
 </script>
