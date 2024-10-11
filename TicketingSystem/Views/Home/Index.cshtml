@@ -8,15 +8,34 @@
     <a id="addTicket"class="btn btn-primary mt-2">Yes</a>
 </div>
 
-<ul id="ticketList">
-</ul>
+<div id="ticketList" class="w-100">
+</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
+        let counter = 0;
         $(`#addTicket`).click(function () {
-            const component = `<li>Hello</li>`;
+            //create a new component upon clicking addTicket
+            const component = 
+            `
+                <div class="d-flex justify-content-between align-items-center w-100 bg-secondary mb-2 p-2">
+                    <span>${counter}</span>
+                    <button class="deleteButton btn btn-primary">Delete</button>
+                </div>
+            `;
             $(`#ticketList`).append(component);
+            counter += 1;
         });
+
+
+        $('#ticketList').on('click', '.deleteButton', function () {
+           /*
+            * Upon clicking a child component of ticketList it grabs that component
+            * via (this) and then grabs the closest div, its parent, and .remove() it
+            */
+            $(this).closest('div').remove();
+        });
+
     });
 </script>
