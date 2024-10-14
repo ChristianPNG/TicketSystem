@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Checkout Code') {
       steps {
-        git(url: 'https://github.com/ChristianPNG/TicketSystem.git', branch: 'main')
+        git(url: 'https://github.com/ChristianPNG/TicketSystem.git', branch: 'Jenkins-Testing')
       }
     }
 
