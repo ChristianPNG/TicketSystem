@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'bitnami/dotnet-sdk:latest'
-    }
-
-  }
+  agent any
   stages {
     stage('Checkout Code') {
       steps {
