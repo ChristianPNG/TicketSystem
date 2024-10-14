@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'node:lts-alpine'
+    }
+
+  }
   stages {
     stage('Checkout Code') {
       steps {
