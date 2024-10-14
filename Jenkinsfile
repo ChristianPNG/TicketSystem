@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'node:lts-alpine'
+      image 'mcr.microsoft.com/dotnet/sdk:6.0'
     }
 
   }
@@ -15,6 +15,12 @@ pipeline {
     stage('Log') {
       steps {
         sh 'ls -la'
+      }
+    }
+
+    stage('Build') {
+      steps {
+        sh 'dotnet restore'
       }
     }
 
