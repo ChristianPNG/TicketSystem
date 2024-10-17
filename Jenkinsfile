@@ -23,8 +23,6 @@ pipeline {
     stage('Build') {
       steps {
         sh 'dotnet restore'
-        sh '''docker build -t ticketingsystem-image .
-'''
       }
     }
 
