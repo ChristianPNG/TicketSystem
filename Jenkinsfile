@@ -2,6 +2,7 @@ pipeline {
   agent {
     docker {
       image 'mcr.microsoft.com/dotnet/sdk:8.0'
+      args '-u root'
     }
 
   }
@@ -20,16 +21,5 @@ pipeline {
       }
     }
 
-    stage('Build') {
-      steps {
-        sh 'dotnet restore'
-        sh '''docker build -t ticketingsystem-image .
-'''
-      }
-    }
-
-  }
-  environment {
-    DOTNET_CLI_HOME = '/tmp/DOTNET_CLI_HOME'
   }
 }
